@@ -79,23 +79,23 @@ public:
         cout << "\nTotal Cost is : "<< TotalCost << endl;
         cout << "Please Deposit a 25% to reserve the event"<<endl;
         cout << "The Deposit needed is : " << depositAmount<<endl;
-        char depo;
-        cout << "\t--Do you want to reserve ? (Y:yes N:no) :";
-        cin >> depo;
-        char a=1;
-        //this if condition check for reservetion.
-        if (depo=='y'||depo=='Y')
-        {
-            cout << "\nWe got the deposit Amount \n  Your Reservation is Completed "<<a;
-        }
-        else if (depo=='N'||depo=='n')
-        {
-            cout << "\nReservation cancelled. \n Visit again";
-        }
-        else
-        {
-            cout << "\nInvalid input TRY Again";
-        }        
+        // char depo;
+        // cout << "\t--Do you want to reserve ? (Y:yes N:no) :";
+        // cin >> depo;
+        // char a=1;
+        // //this if condition check for reservetion.
+        // if (depo=='y'||depo=='Y')
+        // {
+        //     cout << "\nWe got the deposit Amount \n  Your Reservation is Completed "<<a;
+        // }
+        // else if (depo=='N'||depo=='n')
+        // {
+        //     cout << "\nReservation cancelled. \n Visit again";
+        // }
+        // else
+        // {
+        //     cout << "\nInvalid input TRY Again";
+        // }        
         //cout << "Total Guests : "<< NumberOfguests << endl;
         //cout << "Time of Event " << NumberOfminutes << endl;
     }
@@ -105,12 +105,25 @@ public:
 
 int main() 
 {
-    //this is an object of a class Event
-    EVENT e;
+    char newEvent;
 
-    //here we are calling getter and setter method of class Event 
-    e.setestimate();
-    e.getEstimate();
+    do
+    {
+        
+        //this is an object of a class Event
+        EVENT e;
+
+        //here we are calling getter and setter method of class Event 
+        e.setestimate();
+        e.getEstimate();
+        //this if condition check client want new Estimate or not
+        cout << "\t--Do you Want Estimate for new Event (Y:yes N:no) : ";
+        cin >> newEvent;
+        if(newEvent=='n'||newEvent=='N')
+        {
+            cout << " Visit Again";
+        }
 	
+    } while (newEvent=='y'||newEvent=='Y');
 	return 0;
 }
